@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Strange Predictor</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Favicons -->
+<meta name="theme-color" content="#712cf9">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+
+      .accordion{
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .accordion-button{
+        color: #ffffff!important;
+        font-size: large;
+      }
+
+      .text-primary-emphasis{
+        font-size: medium;
+        margin-bottom: 5px;
+      }
+      .no0{
+        background-color: #CCCCCC!important;
+      }
+
+      .no1{
+        background-color: #152484!important;
+      }
+
+      .no2{
+        background-color: #E61E2B!important;
+      }
+
+      .no4{
+        background-color: #FF7210!important;
+      }
+
+      .no5{
+        background-color: #22AC38!important;
+      }
+
+      .no7{
+        background-color: #777777!important;
+      }
+
+      .no8{
+        background-color: #777777!important;
+      }
+
+      .no1557{
+        background-color: #777777!important;
+      }
+
+      .tno0{
+        color: #CCCCCC!important;
+      }
+
+      .tno1{
+        color: #152484!important;
+      }
+
+      .tno2{
+        color: #E61E2B!important;
+      }
+
+      .tno4{
+        color: #FF7210!important;
+      }
+
+      .tno5{
+        color: #22AC38!important;
+      }
+
+      .tno7{
+        color: #777777!important;
+      }
+
+      .tno8{
+        color: #777777!important;
+      }
+
+      .tno1557{
+        color: #777777!important;
+      }
+      
+
+      table{
+        font-size:large;
+      }
+
+      .mx-0 {
+          color:#FFFFFF!important;
+          width:1.5px!important;
+          margin-top:-5px!important;
+          margin-bottom:-2px!important;
+          opacity:1!important;
+      }
+
+      .px-1{
+        color:#FFFFFF!important;
+      }
+
+      body {
+        font-family: "Yeon Sung", system-ui!important;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .accordion-button:not(.collapsed)::after {
+          background-image: none;
+          transform: none;
+      }
+
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/5.3/examples/dashboard/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+
+<header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="/">Election 2025 (참고만 ㅎㅎ)</a>
+
+  <ul class="navbar-nav flex-row">
+    <li class="nav-item text-nowrap ">
+        <text class="col-md-3 col-lg-2 me-0 px-3 fs-6 text-white"></text>
+    </li>
+  </ul>
+
+  <div id="navbarSearch" class="navbar-search w-100 collapse">
+    <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <main class="col-md-12 ms-sm-auto col-lg-12 px-md-4" id="main">
+      <h1 style="margin-top:1px;"></h1>
+      <h1 style="margin-top:1px;" id="mainTitle"></h1>
+    </main>
+  </div>
+</div>
+<script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+<script>
+  jQuery.ajaxSetup({async:false});
+
+  const party_map = new Map();
+  // 2024
+  party_map.set('미개표', '0')
+  party_map.set('예측 전', '0')
+
+  party_map.set('더불어민주당', '1')
+  party_map.set('국민의힘', '2')
+  party_map.set('개혁신당', '4')
+  party_map.set('민주노동당', '5')
+  
+  cities = ["seoul","gyeonggi","incheon","gangwon","daejeon","sejong","chungnam","chungbuk","busan","ulsan","gyeongnam","daegu","gyeongbuk","gwangju","jeonnam","jeonbuk","jeju"]
+  kcities = ["서울", "경기", "인천", "강원", "대전", "세종", "충남", "충북", "부산", "울산", "경남", "대구", "경북", "광주", "전남", "전북", "제주"]
+  imgsrcs = [
+    '',
+    'https://cdn.nec.go.kr/photo_20250603/Gsg1/Hb100153692/gicho/100153692.JPG?ver=1723774',
+    'https://cdn.nec.go.kr/photo_20250603/Gsg1/Hb100153710/gicho/100153710.JPG?ver=1825360',
+    '',
+    'https://cdn.nec.go.kr/photo_20250603/Gsg1/Hb100153689/gicho/100153689.JPG?ver=1971763',
+    'https://cdn.nec.go.kr/photo_20250603/Gsg1/Hb100153725/gicho/100153725.JPG?ver=1977847',
+    '',
+    'https://cdn.nec.go.kr/photo_20250603/Gsg1/Hb100153708/gicho/100153708.JPG?ver=1971955',
+    'https://cdn.nec.go.kr/photo_20250603/Gsg1/Hb100153722/gicho/100153722.JPG?ver=1963282'
+  ]
+  kor_to_idx = new Map();
+  for(let i=0;i<17;i++){
+    kor_to_idx.set(cities[i], i);
+  }
+  console.log(kor_to_idx);
+  const prettyPercentage = function (a) {
+      if(a >= 0){
+          p = Math.round(a * 1000);
+          return Math.floor(p / 10) + "." + (p%10);
+      }else{
+          p = Math.round((-a) * 1000);
+          return "-" + Math.floor(p / 10) + "." + (p%10);
+      }
+  }
+  function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+  let target_city = getParameterByName('city').trim();
+  const target_town = getParameterByName('town').trim();
+  if(target_city.length == 0){
+    target_city = "seoul";
+  }
+  //if(target_city.length == 0 && target_town.length > 0){
+  //  location.replace('/index.html');
+  //}
+  console.log(target_city);
+  console.log(target_town);
+  $(() => {
+
+    // Step 1: Basic Informations
+    $.get("raw/recent/_prediction.txt", (data) => {
+      console.log(data);
+      const mainFrame = $("#main");
+      rows = data.split('\n');
+      target_idx = kor_to_idx.get(target_city);
+      // city
+      result_pred = new Map();
+      result_curr = new Map();
+      contents = '';
+      for(let ii=0;ii<rows.length-1;ii++){
+        tokens = rows[ii].trim().split('\t')
+        /*
+        if(tokens.length < 3) break;
+        num_candidates = (tokens.length - 3) / 6
+        city_idx = kor_to_idx.get(tokens[2].trim().split('_')[0]);
+        if(city_idx != target_idx) continue;
+        let maxn = -1, maxi = -0.01, secn = -1, seci = -0.02;
+        let vsum = 0.0001;
+        for(let i=0;i<num_candidates;i++){
+          _nvotes = parseInt(tokens[3 + 2 * num_candidates + i]);
+          vsum += _nvotes;
+          if(_nvotes > maxi){
+            secn = maxn;
+            seci = maxi;
+            maxn = i;
+            maxi = _nvotes;
+          }else if(_nvotes > seci){
+            secn = i;
+            seci = _nvotes;
+          }
+        }
+        if(maxi < 0.01) won = "미개표";
+        else won = tokens[3 + 2 * maxn];
+        if(!result_curr.has(won)) result_curr.set(won, 0);
+        result_curr.set(won, result_curr.get(won) + 1);
+        if(!party_map.has(won)) party_map.set(won, 1557);
+
+        if(!party_map.has(tokens[3 + 2 * maxn])) party_map.set(tokens[3 + 2 * maxn], 1557);
+        if(!party_map.has(tokens[3 + 2 * secn])) party_map.set(tokens[3 + 2 * secn], 1557);
+        
+
+        _maxn = -1; _maxi = -0.01;
+        for(let i=0;i<num_candidates;i++){
+          _nvotes = parseFloat(tokens[3 + 5 * num_candidates + i]);
+          if(_nvotes > _maxi){
+            _maxn = i;
+            _maxi = _nvotes;
+          }
+        }
+        if(maxi < 0.01) won = "예측 전";
+        else won = tokens[3 + 2 * _maxn];
+        if(!result_pred.has(won)) result_pred.set(won, 0);
+        result_pred.set(won, result_pred.get(won) + 1);
+        if(!party_map.has(won)) party_map.set(won, 1557);
+
+        let maxc = party_map.get(tokens[3 + 2 * maxn]), secc = party_map.get(tokens[3 + 2 * secn]);
+        */
+        let ui_first = 12, ui_second = 12, target_city = "전국", pred_msg = "당선 확률";
+        if(ii > 0){
+          ui_first = 4; ui_second = 6; target_city = kcities[ii-1]; pred_msg = "지역 1위 확률";
+        }
+        contents += `
+        <div class="col-xxl-${ui_first} col-xl-${ui_second} col-lg-${ui_second}  col-md-12 col-sm-12 col-xs-12 accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button no${tokens[1]}" type="button" aria-expanded="true">
+              ${target_city} | 개표 ${tokens[0]} (사전 - ${tokens[0]}%, 선거일 - ${tokens[0]}%)&nbsp;
+            </button>
+          </h2>
+          <div class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <div class="row">
+                <div class="col-4 tno1">
+                  <h5 style="text-align:left;">더불어민주당</h5>
+                  <h2 style="text-align:left;">이재명</h2>
+                  <h2 style="text-align:left;">${tokens[2]}%</h2>
+                </div>
+                <div class="col-4 tno4">
+                  <h5 style="text-align:center;">정의당</h5>
+                  <h2 style="text-align:center;">심상정</h2>
+                  <h2 style="text-align:center;">${tokens[4]}%</h2>
+                </div>
+                <div class="col-4 tno2">
+                  <h5 style="text-align:right;">국민의힘</h5>
+                  <h2 style="text-align:right;">윤석열</h2>
+                  <h2 style="text-align:right;">${tokens[3]}%</h2>
+                </div>                
+              </div>
+              <div class="row">
+                <div class="col-4 tno1">
+                  <h5 style="text-align:left;">예측 ${tokens[14]}-${tokens[15]}%</h5>
+                </div>
+                <div class="col-4 tno4">
+                  <h5 style="text-align:center;">예측 ${tokens[18]}-${tokens[19]}%</h5>
+                </div>
+                <div class="col-4 tno2">
+                  <h5 style="text-align:right;">예측 ${tokens[16]}-${tokens[17]}%</h5>
+                </div>                
+              </div>
+              <div class="progress-stacked">
+                <div class="progress" role="progressbar" style="width: ${100 * parseFloat(tokens[2]) / (parseFloat(tokens[2]) + parseFloat(tokens[4]) + parseFloat(tokens[3]) + 0.001)}%">
+                  <div class="progress-bar no1"></div>
+                </div>
+                <div class="progress" role="progressbar" style="width: ${100 * parseFloat(tokens[4]) / (parseFloat(tokens[2]) + parseFloat(tokens[4]) + parseFloat(tokens[3]) + 0.001)}%">
+                  <div class="progress-bar no4"></div>
+                </div>
+                <div class="progress" role="progressbar" style="width: ${100 * parseFloat(tokens[3]) / (parseFloat(tokens[2]) + parseFloat(tokens[4]) + parseFloat(tokens[3]) + 0.001)}%">
+                  <div class="progress-bar no2"></div>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-5" style="height:60px;">
+                  <h4 style="text-align:center">사전 (45.8%)</h4>
+                  <h5 style="text-align:center;margin-top:-7px;">${tokens[5]} | ${tokens[7]} | ${tokens[6]}</h5>
+                </div>
+                <div class="col-7">
+                  <div class="progress-stacked" style="margin-top:20px;">
+                    <div class="progress" role="progressbar" style="width: ${100 * parseFloat(tokens[5]) / (parseFloat(tokens[5]) + parseFloat(tokens[7]) + parseFloat(tokens[6]) + 0.001)}%">
+                      <div class="progress-bar no1"></div>
+                    </div>
+                    <div class="progress" role="progressbar" style="width: ${100 * parseFloat(tokens[7]) / (parseFloat(tokens[5]) + parseFloat(tokens[7]) + parseFloat(tokens[6]) + 0.001)}%">
+                      <div class="progress-bar no4"></div>
+                    </div>
+                    <div class="progress" role="progressbar" style="width: ${100 * parseFloat(tokens[6]) / (parseFloat(tokens[5]) + parseFloat(tokens[7]) + parseFloat(tokens[6]) + 0.001)}%">
+                      <div class="progress-bar no2"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-5" style="height:60px;">
+                  <h4 style="text-align:center">선거일 (45.8%)</h4>
+                  <h5 style="text-align:center;margin-top:-7px;">${tokens[8]} | ${tokens[10]} | ${tokens[9]}</h5>
+                </div>
+                <div class="col-7">
+                  <div class="progress-stacked" style="margin-top:20px;">
+                    <div class="progress" role="progressbar" style="width: ${100 * parseFloat(tokens[8]) / (parseFloat(tokens[8]) + parseFloat(tokens[10]) + parseFloat(tokens[9]) + 0.001)}%">
+                      <div class="progress-bar no1"></div>
+                    </div>
+                    <div class="progress" role="progressbar" style="width: ${100 * parseFloat(tokens[10]) / (parseFloat(tokens[8]) + parseFloat(tokens[10]) + parseFloat(tokens[9]) + 0.001)}%">
+                      <div class="progress-bar no4"></div>
+                    </div>
+                    <div class="progress" role="progressbar" style="width: ${100 * parseFloat(tokens[9]) / (parseFloat(tokens[8]) + parseFloat(tokens[10]) + parseFloat(tokens[9]) + 0.001)}%">
+                      <div class="progress-bar no2"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-5" style="height:60px;">
+                  <h4 style="text-align:center">${pred_msg}</h4>
+                  <h5 style="text-align:center;margin-top:-7px;">${tokens[11]} | ${tokens[13]} | ${tokens[12]}</h5>
+                </div>
+                <div class="col-7">
+                  <div class="progress-stacked" style="margin-top:20px;">
+                    <div class="progress" role="progressbar" style="width: ${tokens[11]}%">
+                      <div class="progress-bar no1"></div>
+                    </div>
+                    <div class="progress" role="progressbar" style="width: ${tokens[13]}%">
+                      <div class="progress-bar no4"></div>
+                    </div>
+                    <div class="progress" role="progressbar" style="width: ${tokens[12]}%">
+                      <div class="progress-bar no2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      `
+      } 
+      
+      mainFrame.append(`
+      <div class="row">
+        ${contents}
+      </div>
+      `);
+    });
+  });
+</script>
+</html>
