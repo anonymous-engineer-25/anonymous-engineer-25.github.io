@@ -362,9 +362,9 @@
 
         let maxc = party_map.get(tokens[3 + 2 * maxn]), secc = party_map.get(tokens[3 + 2 * secn]);
         */
-        let ui_first = 12, ui_second = 12, target_city = "전국", pred_msg = "당선 확률";
+        let ui_first = 12, ui_second = 12, target_city = "전국", pred_msg = "당선 확률", pred_msg2 = "2위 확률";
         if(ii > 0){
-          ui_first = 4; ui_second = 6; target_city = kcities[ii-1]; pred_msg = "지역 1위 확률";
+          ui_first = 4; ui_second = 6; target_city = kcities[ii-1]; pred_msg = "지역 1위 확률"; pred_msg2 = "지역 2위 확률";
         }
         contents += `
         <div class="col-xxl-${ui_first} col-xl-${ui_second} col-lg-${ui_second}  col-md-12 col-sm-12 col-xs-12 accordion" id="accordionExample">
@@ -383,13 +383,13 @@
                   <h2 style="text-align:left;">${tokens[2]}%</h2>
                 </div>
                 <div class="col-4 tno4">
-                  <h5 style="text-align:center;">정의</h5>
-                  <h2 style="text-align:center;">심상정</h2>
+                  <h5 style="text-align:center;">개혁</h5>
+                  <h2 style="text-align:center;">이준석</h2>
                   <h2 style="text-align:center;">${tokens[4]}%</h2>
                 </div>
                 <div class="col-4 tno2">
                   <h5 style="text-align:right;">국힘</h5>
-                  <h2 style="text-align:right;">윤석열</h2>
+                  <h2 style="text-align:right;">김문수</h2>
                   <h2 style="text-align:right;">${tokens[3]}%</h2>
                 </div>                
               </div>
@@ -464,6 +464,23 @@
                       <div class="progress-bar no4"></div>
                     </div>
                     <div class="progress" role="progressbar" style="width: ${tokens[12]}%">
+                      <div class="progress-bar no2"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-5" style="height:60px;">
+                  <h4 style="text-align:center">${pred_msg2}</h4>
+                  <h5 style="text-align:center;margin-top:-7px;">${tokens[24]} | ${tokens[26]} | ${tokens[25]}</h5>
+                </div>
+                <div class="col-7">
+                  <div class="progress-stacked" style="margin-top:20px;">
+                    <div class="progress" role="progressbar" style="width: ${tokens[24]}%">
+                      <div class="progress-bar no1"></div>
+                    </div>
+                    <div class="progress" role="progressbar" style="width: ${tokens[26]}%">
+                      <div class="progress-bar no4"></div>
+                    </div>
+                    <div class="progress" role="progressbar" style="width: ${tokens[25]}%">
                       <div class="progress-bar no2"></div>
                     </div>
                   </div>
