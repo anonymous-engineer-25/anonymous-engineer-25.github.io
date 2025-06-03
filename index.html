@@ -296,8 +296,13 @@
   //}
   console.log(target_city);
   console.log(target_town);
+  $.ajaxSetup({
+    cache: false
+  });
   $(() => {
-
+    $.ajaxSetup({
+      cache: false
+    });
     // Step 1: Basic Informations
     $.get("raw/recent/_prediction.txt", (data) => {
       console.log(data);
