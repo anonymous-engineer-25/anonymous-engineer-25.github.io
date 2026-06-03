@@ -338,13 +338,13 @@
                   </div>                
                 </div>
                 <div class="progress-stacked">
-                  <div class="progress" role="progressbar" style="width: ${prettyPercentage(firstn / (open_sum + 1e-6))}%">
+                  <div class="progress" role="progressbar" style="width: ${prettyPercentage(firstn / (valid_sum + 1e-6))}%">
                     <div class="progress-bar no${first_party}"></div>
                   </div>
-                  <div class="progress" role="progressbar" style="width: ${100 - prettyPercentage((firstn + secondn) / (open_sum + 1e-6))}%">
+                  <div class="progress" role="progressbar" style="width: ${100 - prettyPercentage((firstn + secondn) / (valid_sum + 1e-6))}%">
                     <div class="progress-bar no0"></div>
                   </div>
-                  <div class="progress" role="progressbar" style="width: ${prettyPercentage(secondn / (open_sum + 1e-6))}%">
+                  <div class="progress" role="progressbar" style="width: ${prettyPercentage(secondn / (valid_sum + 1e-6))}%">
                     <div class="progress-bar no${second_party}"></div>
                   </div>
                 </div>
