@@ -267,7 +267,7 @@
     const mainFrame = $("#main");
     for(const r of results) {
       if(r.status === "fulfilled") {
-        const lines = r.value.trim().split("\r\n");
+        const lines = r.value.trim().split(/\r?\n/);
         let first = -1, second = -1;
         let firstn = -1, secondn = -1;
         let cnt = 0;
