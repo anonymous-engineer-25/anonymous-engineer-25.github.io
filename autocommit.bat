@@ -1,9 +1,4 @@
-:loop
-	python ../newscript/get.py
-	git add .
-	set HOURMINUTE=%time:~0,5%
-        git commit -m "AUTO_COMMIT at %date% %HOURMINUTE%"
-	git push origin master
-	TIMEOUT 60
-	
-goto loop
+git add .
+set HOURMINUTE=%time:~0,5%
+	git commit -m "AUTO_COMMIT at %date% %HOURMINUTE%"
+git push origin master
